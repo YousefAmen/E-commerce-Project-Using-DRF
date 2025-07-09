@@ -2,3 +2,4 @@ core/.env
 *.sqlite3
 /media/
 static/
+todo-list.txt
