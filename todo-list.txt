@@ -55,13 +55,6 @@
         - building number
         - phone number
         
-    admin account
-    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MDkyNjU3MCwiaWF0IjoxNzUwODQwMTcwLCJqdGkiOiJjMjUzYzcwNDhlMjE0MmU0ODJmODM4YmYwOGQ4NGU2NyIsInVzZXJfaWQiOjF9.g4rttwpAfe2Fh4ze4Gw5RAtgobC-Wp9ztKw-z1AwBhQ",
-    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODU1NjYwLCJpYXQiOjE3NTA4NDAxNzAsImp0aSI6ImU2NzQ2MGU5MTg4MTQxYjhhMzA4MjNlMTUxOGZhOWI3IiwidXNlcl9pZCI6MX0.ZkV0swd_B8UwrcCItPMa_RJBVO70_wp8q9Lvk0fOCvA"
-
-    mo_ad account 
-       "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MDk0MjU0MiwiaWF0IjoxNzUwODU2MTQyLCJqdGkiOiI2OGQyMDBhYmNhZDI0OWI4YmU4YTgwM2RhZGU0OWY1YyIsInVzZXJfaWQiOjN9.MUe0ZlUi1-NwvG00XZvZ9Ebibmsr5mEfc_-cUCfSCek",
-    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwODYxNDk3LCJpYXQiOjE3NTA4NTYxNDIsImp0aSI6IjVhNTczYzIzZDg2YjRmNzM4OTgyNmFmMzQ3YTU0NWMzIiwidXNlcl9pZCI6M30.BL0dcoGhHT6Xj4fxChuN91WTZ09cvSi6tO72FZZYABU"
 
 
 
@@ -95,14 +88,38 @@
     }
 
 
-    adel account
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTExODM4MywiaWF0IjoxNzUxMDMxOTgzLCJqdGkiOiJkOTg2ODI0ZmMyMjI0NmE5ODc0MzEzZjVhNTRhNWRmMyIsInVzZXJfaWQiOjJ9.PPhzE3F4cLsmASExGJ169QTlV483rHcYDR7PsyjHroE    "refresh": "",
-    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMDMyMjgzLCJpYXQiOjE3NTEwMzE5ODMsImp0aSI6ImEyMjI3NTBlZDI3ZDRlNjQ4M2EzMjY3YWVkZDQ5OTg4IiwidXNlcl9pZCI6Mn0.rHkupyTgx7gLlUFuxU5GTA9wAOTEq2DWGX_LJnbRtCQ"
-
-
 
 no i expact from the frontend when he create order_item for order expact order_id and this id field is uuid and i will add it on the create method and when create order item must i will extract the order id and add it in the create you now that it's like when the user is create order ok and the order is created successfully now i will get the product    
 
     - new i need Cart 
+        - make class that will have the all cart functiolity
+        - first we need to create session for user is not have
+        - and used this session to add the product_id and quatity of the product
+        - and make the update and delete on this session 
+        - and return the product_id and quatity in the checkout view 
+        - than create order 
+        - and make loop in the session to get the products id and quantity 
+        - and get the product 
+        - than pass the product to order_item to create new order item
+        - than associted the order item with main order 
     - after make cart  i need to make checkout view 
-    
+    - checkout:
+        all this in one tranction
+            - get the user cart
+            - create order with the user  
+            - making for loop in the cart order 
+            - create orderitem with cart items
+            - than linked the orderItem with the order 
+        mark the order as shipped when the payment is successd
+
+
+ - create Comment System
+     - Comment Model:
+        - user
+        - product
+        - body 
+        -created_at
+        - update_at
+        - slug
+        - active
+        

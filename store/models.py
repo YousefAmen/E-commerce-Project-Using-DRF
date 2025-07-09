@@ -75,6 +75,10 @@ class Product(models.Model):
             self.price -= self.discount
         return super().save(*args, **kwargs)
 
+    @property
+    def comments_count(self):
+        return self.product_comments.count()
+
 
 class ShippingAddress(models.Model):
     user = models.ForeignKey(
@@ -167,7 +171,3 @@ class Comment(models.Model):
         if not self.slug:
             self.slug = slugify(self.body)
         return super().save(*args, **kwargs)
-
-    @property
-    def comments_count(self):
-        return self.product_comments.count()

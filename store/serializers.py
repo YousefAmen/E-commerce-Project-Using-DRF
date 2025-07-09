@@ -30,7 +30,6 @@ class CommentsSerializer(serializers.ModelSerializer):
             "user",
             "product",
             "body",
-            "comments_count",
             "slug",
             "created_at",
             "updated_at",
@@ -77,6 +76,7 @@ class ProductRetrieveSerializer(serializers.ModelSerializer):
             "discount",
             "date_added",
             "product_comments",
+            "comments_count",
         ]
 
 
