@@ -408,6 +408,7 @@ def verify_payment(request):
                 # manage the stock
                 item.product.stock_quantity -= item.quantity
                 item.product.save()
+            # delete the items of the cart after create order
             cart.delete()
             serializer = OrderSerializer(order)
             return Response(
@@ -421,7 +422,7 @@ def verify_payment(request):
         )
     except Cart.DoesNotExist:
         return Response(
-            {"message": "cart is not found"}, status=status.HTTP_400_BAD_REQUEST
+            {"message": "Cart is not found"}, status=status.HTTP_400_BAD_REQUEST
         )
     except stripe.error.StripeError as e:
         return Response(
